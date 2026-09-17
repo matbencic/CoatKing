@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Coat King — salon za njegu pasa, Samobor</title>
-<meta name="description" content="Coat King je salon za frizuru i njegu pasa u Samoboru. Grooming, sPAW tretmani i grooming akademija. Termini isključivo telefonski: 095 582 6131.">
+<meta name="description" content="Coat King — kraljevski tretman od njuške do repa. Salon za njegu pasa u Samoboru: grooming, sPAW tretmani i grooming akademija.">
 <link rel="icon" href="images/ck-icon.jpg">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Cinzel:wght@500;600&family=Jost:wght@300;400;500;600&display=swap');
@@ -193,18 +193,7 @@
   .head p{margin-top:16px; color:var(--cream-dim); line-height:1.7; font-size:1rem;}
 
   /* ---------- about ---------- */
-  .about .grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:center;}
-  @media (max-width:860px){ .about .grid{grid-template-columns:1fr; gap:40px;} }
-  .about-plate{
-    aspect-ratio:4/5; border:1px solid var(--hairline); border-radius:var(--radius);
-    background:linear-gradient(155deg,var(--ink-2),var(--ink-3));
-    display:flex; align-items:center; justify-content:center; position:relative;
-    overflow:hidden;
-  }
-  .about-plate svg{width:56%; height:56%; opacity:.92;}
-  .about-plate::after{
-    content:''; position:absolute; inset:14px; border:1px solid var(--gold-dim); opacity:.5;
-  }
+  .about .grid{display:block; max-width:640px; margin-inline:auto;}
   .about h2{font-size:clamp(1.7rem,3.2vw,2.3rem); margin-bottom:20px;}
   .about p{color:var(--cream-dim); line-height:1.8; margin:0 0 16px;}
   .about ul{list-style:none; margin:28px 0 0; padding:0; display:grid; gap:14px;}
@@ -243,6 +232,31 @@
   .portrait span{
     display:block; margin-top:12px; font-family:'Cinzel',serif; font-size:.62rem;
     letter-spacing:.1em; text-transform:uppercase; color:var(--cream-dim);
+  }
+
+  /* ---------- photo gallery ---------- */
+  .photo-gallery{background:var(--ink-2); border-block:1px solid var(--hairline);}
+  .photo-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:180px;
+    grid-auto-flow:dense; gap:14px;
+  }
+  .photo-grid .frame{
+    position:relative; overflow:hidden; border:1px solid var(--hairline);
+    background:var(--ink-3);
+  }
+  .photo-grid .frame.tall{grid-row:span 2;}
+  .photo-grid .frame img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter:saturate(.9) contrast(1.02); transition:transform .6s ease, filter .6s ease;
+  }
+  .photo-grid .frame:hover img{transform:scale(1.06); filter:saturate(1) contrast(1.05);}
+  .photo-grid .frame::after{
+    content:''; position:absolute; inset:0; box-shadow:inset 0 0 0 1px var(--gold-dim);
+    opacity:0; transition:opacity .3s;
+  }
+  .photo-grid .frame:hover::after{opacity:.7;}
+  @media (max-width:720px){
+    .photo-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
   }
 
   /* ---------- academy strip ---------- */
@@ -287,6 +301,7 @@
 </style>
 </head>
 <body>
+
 <header>
   <div class="bar">
     <a class="brand" href="#top">
@@ -366,9 +381,6 @@
   <!-- ABOUT -->
   <section class="about" id="onama">
     <div class="wrap grid">
-      <div class="about-plate">
-        <img src="images/ck-icon.jpg" alt="Coat King grb" style="width:56%; height:auto; opacity:.95; object-fit:contain;">
-      </div>
       <div>
         <p class="eyebrow" style="margin-bottom:14px;">O nama</p>
         <h2>Kraljevstvo posvećeno njezi.</h2>
@@ -502,6 +514,28 @@
           </svg>
           <span>Terijer</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section class="photo-gallery" id="foto-galerija">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Galerija</p>
+        <h2>Dvorski trenuci</h2>
+        <p>Pravi gosti našeg salona, uhvaćeni u punom sjaju — prije, poslije i za vrijeme kraljevskog tretmana.</p>
+      </div>
+      <div class="photo-grid">
+        <div class="frame"><img src="images/gallery-1.jpg" alt="Mačka na stolu za njegu u salonu Coat King" loading="lazy"></div>
+        <div class="frame tall"><img src="images/gallery-2.jpg" alt="Aljaški malamut u salonu Coat King" loading="lazy"></div>
+        <div class="frame"><img src="images/gallery-3.jpg" alt="Buldog na stolu za njegu u salonu Coat King" loading="lazy"></div>
+        <div class="frame"><img src="images/gallery-4.jpg" alt="Pudlica nakon groominga u salonu Coat King" loading="lazy"></div>
+        <div class="frame"><img src="images/gallery-5.jpg" alt="Samojed prije šišanja u salonu Coat King" loading="lazy"></div>
+        <div class="frame"><img src="images/gallery-6.jpg" alt="Samojed nakon njege u salonu Coat King" loading="lazy"></div>
+        <div class="frame tall"><img src="images/gallery-7.jpg" alt="Britanska kratkodlaka mačka u salonu Coat King" loading="lazy"></div>
+        <div class="frame"><img src="images/gallery-8.jpg" alt="Mali dugodlaki pas na stolu za njegu u salonu Coat King" loading="lazy"></div>
+        <div class="frame"><img src="images/gallery-9.jpg" alt="Trobojni pas nakon groominga u salonu Coat King" loading="lazy"></div>
       </div>
     </div>
   </section>

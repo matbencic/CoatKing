@@ -6,12 +6,16 @@ Landing stranica za salon za njegu pasa Coat King (Samobor), izrađena po uzoru 
 
 ```
 index.html         glavna stranica (sve sekcije, stilovi i skripta su unutar jedne datoteke)
-images/             logo (ck-full.jpg, ck-icon.jpg)
+images/             logo (ck-full.jpg, ck-icon.jpg) i fotografije za galeriju (gallery-1.jpg … gallery-9.jpg)
 ```
 
 ## Logo i ilustracije
 
-Logo se nalazi u `images/ck-full.jpg` (puni logotip s natpisom) i `images/ck-icon.jpg` (samo ikona, korištena u zaglavlju, footeru i "O nama" sekciji). Ilustracije pasmina u sekciji "Dvorski štićenici" ručno su nacrtane (SVG kod izravno u `index.html`) u stilu loga — ako ih kasnije želite zamijeniti stvarnim fotografijama pasa, samo javite.
+Logo se nalazi u `images/ck-full.jpg` (puni logotip s natpisom) i `images/ck-icon.jpg` (samo ikona, korištena u zaglavlju, footeru i "O nama" sekciji). Ilustracije pasmina u sekciji "Dvorski štićenici" ručno su nacrtane (SVG kod izravno u `index.html`) u stilu loga.
+
+## Galerija fotografija
+
+Sekcija "Dvorski trenuci" prikazuje 9 stvarnih fotografija iz salona (`images/gallery-1.jpg` … `images/gallery-9.jpg`), poredanih redoslijedom po kojem ste numerirali izvorne slike (0, 1, 2, 3, 4, 5, 7, 8, 9). Za zamjenu ili dodavanje fotografija, ubacite novu sliku u `images/` folder i izmijenite odgovarajući `<img src="...">` unutar `<div class="photo-grid">` u `index.html` (potražite `id="foto-galerija"`). Dvije slike su označene klasom `tall` radi izmjeničnog rasporeda — po želji tu klasu možete maknuti ili dodati drugoj slici.
 
 ## Uređivanje teksta
 
